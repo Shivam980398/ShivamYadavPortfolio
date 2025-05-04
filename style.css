@@ -10,7 +10,7 @@ body {
   height: 100%;
 }
 .navbar {
-  height: 70px;
+  height: 60px;
   width: 95%;
   margin-left: 25px;
   margin-top: 5px;
@@ -49,7 +49,7 @@ a {
 a:hover {
   color: rgb(255, 255, 255);
 }
-@media (max-width: 798.992px) {
+/* @media (max-width: 798.992px) {
   .navbar {
     margin-left: 6px;
     margin-right: 0px;
@@ -60,15 +60,15 @@ a:hover {
     display: flex;
     margin-right: 2px;
   }
-}
-@media (max-width: 334px) {
+} */
+/* @media (max-width: 334px) {
   a {
     font-size: 12px;
     padding-top: 0px;
   }
-}
+} */
 
-@media (min-width: 798.992px) and (max-width: 2140px) {
+@media (min-width: 798.992px) and (max-width: 1540px) {
   .rightNav {
     height: auto;
     display: flex;
@@ -132,8 +132,8 @@ a:hover {
   background-color: rgb(9, 10, 10);
 }
 .image img {
-  width: 500px;
-  height: 450px;
+  width: 450px;
+  height: 400px;
 
   box-shadow: -5px -10px 5px #c4beba;
   box-shadow: 0px -2px 5px #b9b2ac;
@@ -152,7 +152,7 @@ a:hover {
 }
 
 .registerPanel {
-  width: 50rem;
+  width: 30rem;
   height: 20rem;
   padding-top: 25px;
   color: #09bfdf;
@@ -187,6 +187,7 @@ a:hover {
   }
 }
 button {
+  position: relative;
   height: 50px;
   width: 150px;
   border-radius: 10px;
@@ -195,10 +196,28 @@ button {
   background-color: rgb(9, 10, 10);
   font-size: 20px;
   border: 2px solid #09bfdf;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-button:hover {
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
   background-color: #09bfdf;
+  transition: left 0.4s ease-in-out;
+}
+
+button:hover::before {
+  left: 0;
+}
+button span {
+  position: relative;
+  background-color: transparent;
+  z-index: 2; /* Ensures text is on top */
 }
 .box2-project {
   text-align: center;
