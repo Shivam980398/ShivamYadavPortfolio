@@ -60,7 +60,7 @@ a:hover {
     display: flex;
     margin-right: 2px;
   }
-  .signup {
+  .signup-button {
     margin-right: 0px;
   }
 }
@@ -297,17 +297,17 @@ hr {
     height: auto;
   }
 
-  .left-panel {
+  .right-panel {
     width: 80%; /* Resized panel */
     height: auto;
     margin-top: 20px;
   }
 
-  .left-panel h1 {
+  .right-panel h1 {
     font-size: 1.5em; /* Resized text */
   }
 
-  .left-panel h2 {
+  .rightt-panel h2 {
     font-size: 1.2em; /* Resized text */
   }
 
@@ -325,7 +325,7 @@ hr {
     /* margin-left: 38.5px; */
     /* padding-left: 40px; */
   }
-  .left-panel h2 {
+  .right-panel h2 {
     font-size: 1.8em; /* Resized text */
     margin-top: -15px;
     /* background-color: transparent; */
@@ -339,12 +339,12 @@ hr {
 }
 
 @media (max-width: 500px) {
-  .left-panel h1 {
+  .right-panel h1 {
     font-size: 20px;
     text-overflow: clip; /* Target the h1 */
   }
 
-  .left-panel h2 {
+  .right-panel h2 {
     font-size: 20px; /* Target the h2 */
   }
 
@@ -623,21 +623,6 @@ hr {
 .fitness-title {
   background-color: rgb(26, 183, 12);
   color: #000;
-}
-
-.harigurus-title {
-  background-color: #fc815c;
-  color: #fff; /* Assuming a light text color for contrast */
-}
-
-.web-dev-english-title {
-  background-color: #47afa1;
-  color: #fff; /* Assuming a light text color for contrast */
-}
-
-.pioneer-digital-title {
-  background-color: #fc815c;
-  color: #fff; /* Assuming a light text color for contrast */
 }
 
 /* Work Details Styling */
