@@ -9,6 +9,9 @@ body {
   width: 100%;
   height: 100%;
 }
+html {
+  scroll-behavior: smooth;
+}
 .navbar {
   height: 60px;
   width: 95%;
@@ -22,6 +25,9 @@ body {
   flex-wrap: wrap;
   align-content: center;
   justify-content: space-between;
+  transition: z-index 0.3s, opacity 0.3s;
+  /* z-index: 1000; */
+  /* z-index: 9999; */
 }
 .logo {
   margin-top: 5px;
@@ -37,6 +43,37 @@ body {
 .rightNav {
   background-color: rgb(32, 30, 30);
 }
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rightNav a {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideDown 0.5s ease forwards;
+}
+
+.rightNav a:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.rightNav a:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.rightNav a:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.rightNav a:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
 a {
   margin-top: 10px;
   height: auto;
@@ -755,4 +792,266 @@ hr {
   animation: appear1 linear;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
+}
+
+/* Hide icons by default */
+.social-icons {
+  display: none;
+  position: absolute;
+  top: 300px; /* Adjust position */
+  right: 50px;
+  width: 20px;
+  list-style: none;
+  background-color: black;
+}
+
+/* Show icons when hovering over the CONTACT ME button */
+.Login-button:hover + .social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+/* Your existing @keyframes for vertical-line-appear (or whichever you're using for the line) */
+@keyframes vertical-line-appear {
+  0% {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0); /* Starts fully clipped from the bottom */
+  }
+  100% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0); /* Fully revealed */
+  }
+}
+
+.timeline-vertical-line {
+  /* Your existing styles for the line */
+  /* ... */
+
+  /* Apply the vertical animation */
+  animation: vertical-line-appear linear;
+  animation-timeline: view();
+  /* Changed animation-range to make it reveal until 80% of the viewport is covered */
+  animation-range: entry 0% cover 90%; /* Animation completes when the element covers 80% of the viewport */
+}
+
+.skills-tree-section {
+  /* padding: 50px 20px; */
+  color: #ccd6f6;
+  text-align: center;
+  position: relative;
+}
+
+.skills-heading {
+  font-size: 2.5rem;
+  color: #64ffda;
+  /* margin-bottom: 50px; */
+  /* position: relative; */
+  border-top: #09bfdf 2px solid;
+}
+
+.skills-tree-container {
+  position: relative;
+  /* max-width: 800px; */
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.927);
+  filter: drop-shadow(0 0 60px rgba(59, 130, 246, 0.6));
+}
+
+.skills-tree-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: #64ffda;
+  transform: translateX(-50%);
+}
+
+.skills-branch {
+  /* background: rgba(255, 255, 255, 0.05); */
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  /* padding: 20px; */
+  width: 45%;
+  /* margin: 20px 0; */
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* .skills-branch.left {
+  left: 0;
+  text-align: right;
+  transform: translateX(-50px);
+} */
+
+/* .skills-branch.right {
+  left: 55%;
+  text-align: left;
+  transform: translateX(50px);
+} */
+
+.skills-branch:hover {
+  transform: translateX(0);
+  box-shadow: 0 8px 20px rgba(100, 255, 218, 0.2);
+}
+
+.skills-branch h3 {
+  font-size: 1.5rem;
+  color: #64ffda;
+  margin-bottom: 10px;
+  background-color: transparent;
+}
+
+.skills-branch ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+.skills-branch li {
+  background: rgba(16, 213, 167, 0.1);
+  border: 1px solid #64ffda;
+  border-radius: 20px;
+  padding: 6px 12px;
+  margin: 5px 0;
+  display: inline-block;
+  font-size: 0.9rem;
+
+  /* transition: background 0.3s, color 0.3s; */
+}
+
+.skills-branch li:hover {
+  background: #64ffda;
+  color: #0a192f;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .skills-branch,
+  .skills-branch.left,
+  .skills-branch.right {
+    width: 80%;
+    left: 10%;
+    text-align: center;
+    transform: translateX(0);
+  }
+}
+
+.timeline-line-left-skills {
+  height: 1px;
+  background-color: #1788ae;
+  position: absolute;
+  top: 15%;
+  left: -25%;
+  right: 100%;
+  /* display: none; */
+}
+
+.aboutbox {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: rgb(9, 10, 10);
+  color: #09bfdf;
+  border-radius: 10px;
+  /* text-align: center; */
+  /* box-shadow: 0px 5px 5px #b9b2ac; */
+}
+
+.aboutbox h1 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+@keyframes app {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+    /* scale: 0.5; */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    /* scale: 1; */
+  }
+}
+
+.block {
+  animation: app 3s linear;
+}
+
+.about-description {
+  background: rgba(16, 213, 167, 0.1);
+  /* border: 1px solid #64ffda; */
+  border-radius: 20px;
+  /* padding: 6px 12px; */
+  /* margin: 5px 0; */
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.about-image {
+  position: relative;
+  width: 40%;
+}
+.about-image img {
+  border-radius: 2%;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 830px) {
+  .aboutbox {
+    /* font-size: 2rem; */
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .about-image {
+    /* height: 100%; */
+    width: 20rem;
+    /* width: 100%; */
+  }
+  .about-image img {
+    width: 100%;
+    height: auto;
+    /* border-radius: 10px; */
+    /* box-shadow: 0px 5px 5px #b9b2ac; */
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.scroll-reveal span {
+  color: hsl(0 0% 100% / 0.2);
+  background-clip: text;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  background-image: linear-gradient(90deg, white, white);
+  animation: scroll-reveal linear forwards;
+  animation-timeline: view();
+}
+.scroll-reveal h1 span {
+  animation-range-start: cover 15vh;
+  animation-range-end: cover 20vh;
+}
+@keyframes scroll-reveal {
+  to {
+    background-size: 100% 100%;
+  }
+}
+.scroll-reveal p span {
+  animation-range-start: cover 21vh;
+  animation-range-end: cover 68vh;
 }
