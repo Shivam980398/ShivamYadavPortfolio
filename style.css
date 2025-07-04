@@ -26,6 +26,7 @@ html {
   align-content: center;
   justify-content: space-between;
   transition: z-index 0.3s, opacity 0.3s;
+  z-index: 1;
   /* z-index: 1000; */
   /* z-index: 9999; */
 }
@@ -77,7 +78,8 @@ html {
 a {
   margin-top: 10px;
   height: auto;
-  margin-right: 30px;
+  margin-right: 20px;
+  margin-left: 20px;
   padding: 2px 2px;
   text-decoration: none;
   color: antiquewhite;
@@ -88,8 +90,9 @@ a:hover {
 }
 @media (max-width: 798.992px) {
   .navbar {
-    margin-left: 6px;
-    margin-right: 0px;
+    margin-left: 2.5%;
+    margin-right: 3px;
+    width: 95%;
   }
   .rightNav {
     width: auto;
@@ -296,6 +299,7 @@ hr {
 
 .name-span {
   position: relative;
+  z-index: 0;
   font-size: 2em;
   color: rgb(3, 98, 162);
   background-color: rgb(9, 10, 10);
@@ -798,20 +802,43 @@ hr {
 .social-icons {
   display: none;
   position: absolute;
-  top: 300px; /* Adjust position */
-  right: 50px;
+  bottom: 3rem; /* Adjust position */
+  right: 2rem;
   width: 20px;
   list-style: none;
-  background-color: black;
+  /* background-color: black; */
 }
 
+.social-icons ul {
+  background: #871717;
+}
+.social-icons li {
+  width: 0px;
+}
+
+.social-icons li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 /* Show icons when hovering over the CONTACT ME button */
 .Login-button:hover + .social-icons {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: block;
+  /* flex-direction: column; */
+  /* width: fit-content; */
+  width: 0px;
+  /* padding: 2px; */
+  bottom: 0.8rem;
+  right: -0.2rem;
   animation: appear linear;
+  /* background-color: #649dff; */
   animation-timeline: view();
+
   animation-range: entry 0% cover 40%;
 }
 
@@ -843,6 +870,7 @@ hr {
   color: #ccd6f6;
   text-align: center;
   position: relative;
+  width: 100%;
 }
 
 .skills-heading {
@@ -932,16 +960,6 @@ hr {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
-  .skills-branch,
-  .skills-branch.left,
-  .skills-branch.right {
-    width: 80%;
-    left: 10%;
-    text-align: center;
-    transform: translateX(0);
-  }
-}
 
 .timeline-line-left-skills {
   height: 1px;
@@ -1000,13 +1018,32 @@ hr {
 .about-image {
   position: relative;
   width: 40%;
+  margin-right: 20px;
 }
 .about-image img {
   border-radius: 2%;
   width: 100%;
   height: 100%;
+  margin-right: 10px;
 }
-@media (max-width: 830px) {
+.about-desc-box {
+  filter: drop-shadow(0 0 50px rgba(59, 130, 246, 0.6));
+  padding: 2rem;
+  text-wrap: wrap;
+  background-color: #0a192f;
+  /* width: fit-content; */
+  border-radius: 0px;
+  /* height: fit-content; */
+  /* background-color: transparent; */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  /* padding: 20px; */
+  width: 55%;
+  /* margin: 20px 0; */
+  /* position: relative; */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+@media (max-width: 800px) {
   .aboutbox {
     /* font-size: 2rem; */
     flex-direction: column;
@@ -1017,12 +1054,24 @@ hr {
   .about-image {
     /* height: 100%; */
     width: 20rem;
+    align-self: center;
     /* width: 100%; */
   }
   .about-image img {
     width: 100%;
     height: auto;
     /* border-radius: 10px; */
+    /* box-shadow: 0px 5px 5px #b9b2ac; */
+  }
+  .about-desc-box {
+    width: fit-content;
+    height: auto;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgb(9, 10, 10);
+    color: #09bfdf;
+    border-radius: 10px;
+    /* text-align: center; */
     /* box-shadow: 0px 5px 5px #b9b2ac; */
   }
 }
