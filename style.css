@@ -154,7 +154,7 @@ a:hover {
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-content: center;
-  cursor: pointer;
+  /* cursor: pointer; */
 
   transition: 0.5s ease-in;
 }
@@ -806,7 +806,6 @@ hr {
   right: 2rem;
   width: 20px;
   list-style: none;
-  overflow: hidden;
   /* background-color: black; */
 }
 
@@ -826,21 +825,24 @@ hr {
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
+  animation: slideDown 0.5s ease forwards;
 }
 /* Show icons when hovering over the CONTACT ME button */
-.Login-button:hover + .social-icons {
-  display: block;
-  /* flex-direction: column; */
-  /* width: fit-content; */
-  width: 0px;
-  /* padding: 2px; */
-  bottom: 0.8rem;
-  right: -0.2rem;
-  animation: appear linear;
-  /* background-color: #649dff; */
-  animation-timeline: view();
+@media (min-width: 768px) {
+  .Login-button:hover + .social-icons {
+    display: block;
+    /* flex-direction: column; */
+    /* width: fit-content; */
+    width: 0px;
+    /* padding: 2px; */
+    bottom: 0.8rem;
+    right: -0.2rem;
+    animation: appear linear;
+    /* background-color: #649dff; */
+    animation-timeline: view();
 
-  animation-range: entry 0% cover 40%;
+    animation-range: entry 0% cover 40%;
+  }
 }
 
 /* Your existing @keyframes for vertical-line-appear (or whichever you're using for the line) */
