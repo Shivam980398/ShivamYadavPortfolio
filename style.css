@@ -806,6 +806,7 @@ hr {
   right: 2rem;
   width: 20px;
   list-style: none;
+  overflow: hidden;
   /* background-color: black; */
 }
 
