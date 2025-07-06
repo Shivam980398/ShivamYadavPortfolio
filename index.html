@@ -304,7 +304,7 @@
     <hr />
     <!-- <br>
     <br> -->
- <section class="latest-works-section block " id="Latest-works">
+ <section class="latest-works-section block " id="Latest-works" style="z-index: 2;">
         <h2 class="latest-works-heading appear-animation">
             Latest Works
         </h2>
@@ -568,7 +568,7 @@
         <div class="timeline-vertical-line appear-animation3"></div>
     </section>
     <br> 
-  <section id="skill" class="skills-tree-section">
+  <section id="skill" class="skills-tree-section" style="z-index: 2;">
     <div class="stack-area">
       <div id="skillsMessage" style="display: none; color: #0ff; text-align: center; font-size: 2rem; margin-top: 100px;">
     🚀 You have explored all my skills!
@@ -637,7 +637,7 @@
   </div>
 </section>
 
-<section id="About" class="scroll-reveal" style="padding-top: 2rem;">
+<section id="About" class="scroll-reveal" style="padding-top: 2rem; z-index: 2;">
 
 
     <div class="aboutbox" style="height: fit-content; display: flex;flex-wrap: wrap; padding: 2rem;        filter: drop-shadow(0 0 50px rgba(59, 130, 246, 0.6));
@@ -751,25 +751,24 @@
 
       });
 
-//       const navbar = document.getElementsByClassName('navbar')[0];
+const navbar = document.getElementsByClassName('navbar')[0];
 
-// // Add a timeout variable to manage the auto-hide functionality
+// Add a timeout variable to manage the auto-hide functionality
 let hideTimeout; 
 
-// document.addEventListener('mousemove', function (e) {
-//   if (e.clientY < 60) {
-    
-//     navbar.style.zIndex = '1000';
+document.addEventListener('mousemove', function (e) {
+  if (e.clientY < 60) {
+    navbar.style.zIndex = '1000';
 
-//     // Clear any existing timeout so it doesn't hide immediately
-//     clearTimeout(hideTimeout);
+    // Clear any existing timeout so it doesn't hide immediately
+    clearTimeout(hideTimeout);
 
-//     // Set a new timeout to auto-hide after 3 seconds
-//     hideTimeout = setTimeout(() => {
-//       navbar.style.zIndex = '0';
-//     }, 2000);
-//   }
-// });
+    // Set a new timeout to auto-hide after 2 seconds
+    hideTimeout = setTimeout(() => {
+      navbar.style.zIndex = '0';
+    }, 2000);
+  }
+});
 
 function revealList() {
   const list = document.getElementsByClassName('social-icons')[0];
